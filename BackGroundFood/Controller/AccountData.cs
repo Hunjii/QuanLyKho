@@ -34,7 +34,6 @@ namespace QLKho.Controller
             {
                 return new Account(item);
             }
-
             return null;
         }
 

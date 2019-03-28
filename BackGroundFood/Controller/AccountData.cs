@@ -34,7 +34,7 @@ namespace QLKho.Controller
             {
                 return new Account(item);
             }
-            return null;
+            return null; 
         }
 
         public DataTable GetListAccount()

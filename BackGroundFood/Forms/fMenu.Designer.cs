@@ -77,7 +77,7 @@
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 12;
             this.metroPanel1.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(1600, 123);
             this.metroPanel1.TabIndex = 6;
@@ -104,7 +104,7 @@
             this.btnIssue.ImageNormal = ((System.Drawing.Image)(resources.GetObject("btnIssue.ImageNormal")));
             this.btnIssue.InitialImage = null;
             this.btnIssue.Location = new System.Drawing.Point(705, 15);
-            this.btnIssue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIssue.Margin = new System.Windows.Forms.Padding(4);
             this.btnIssue.Name = "btnIssue";
             this.btnIssue.Size = new System.Drawing.Size(60, 48);
             this.btnIssue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -116,7 +116,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.DimGray;
             this.panel2.Location = new System.Drawing.Point(1091, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(4, 98);
             this.panel2.TabIndex = 2;
@@ -125,7 +125,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
             this.panel1.Location = new System.Drawing.Point(477, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(4, 98);
             this.panel1.TabIndex = 2;
@@ -137,7 +137,7 @@
             this.customButton1.ImageHover = ((System.Drawing.Image)(resources.GetObject("customButton1.ImageHover")));
             this.customButton1.ImageNormal = ((System.Drawing.Image)(resources.GetObject("customButton1.ImageNormal")));
             this.customButton1.Location = new System.Drawing.Point(1544, 39);
-            this.customButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.customButton1.Margin = new System.Windows.Forms.Padding(4);
             this.customButton1.Name = "customButton1";
             this.customButton1.Size = new System.Drawing.Size(56, 48);
             this.customButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -244,7 +244,7 @@
             this.btnGoods.ImageHover = ((System.Drawing.Image)(resources.GetObject("btnGoods.ImageHover")));
             this.btnGoods.ImageNormal = ((System.Drawing.Image)(resources.GetObject("btnGoods.ImageNormal")));
             this.btnGoods.Location = new System.Drawing.Point(852, 15);
-            this.btnGoods.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGoods.Margin = new System.Windows.Forms.Padding(4);
             this.btnGoods.Name = "btnGoods";
             this.btnGoods.Size = new System.Drawing.Size(60, 48);
             this.btnGoods.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -259,7 +259,7 @@
             this.btnRevenue.ImageHover = ((System.Drawing.Image)(resources.GetObject("btnRevenue.ImageHover")));
             this.btnRevenue.ImageNormal = ((System.Drawing.Image)(resources.GetObject("btnRevenue.ImageNormal")));
             this.btnRevenue.Location = new System.Drawing.Point(997, 15);
-            this.btnRevenue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRevenue.Margin = new System.Windows.Forms.Padding(4);
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.Size = new System.Drawing.Size(60, 48);
             this.btnRevenue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -274,7 +274,7 @@
             this.btnReceipt.ImageHover = ((System.Drawing.Image)(resources.GetObject("btnReceipt.ImageHover")));
             this.btnReceipt.ImageNormal = ((System.Drawing.Image)(resources.GetObject("btnReceipt.ImageNormal")));
             this.btnReceipt.Location = new System.Drawing.Point(532, 15);
-            this.btnReceipt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReceipt.Margin = new System.Windows.Forms.Padding(4);
             this.btnReceipt.Name = "btnReceipt";
             this.btnReceipt.Size = new System.Drawing.Size(60, 48);
             this.btnReceipt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -289,7 +289,7 @@
             this.panelControls.HorizontalScrollbarHighlightOnWheel = false;
             this.panelControls.HorizontalScrollbarSize = 12;
             this.panelControls.Location = new System.Drawing.Point(0, 123);
-            this.panelControls.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControls.Margin = new System.Windows.Forms.Padding(4);
             this.panelControls.Name = "panelControls";
             this.panelControls.Size = new System.Drawing.Size(1600, 739);
             this.panelControls.TabIndex = 7;
@@ -306,7 +306,7 @@
             this.Controls.Add(this.panelControls);
             this.Controls.Add(this.metroPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fMenu";

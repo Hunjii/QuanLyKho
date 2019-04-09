@@ -8,9 +8,10 @@ namespace QLKho.Controller
 {
     class Goods
     {
-        public Goods(string ma, int sl)
+        public Goods(string ma,string ten, int sl)
         {
             MaHH = ma;
+            TenHH = ten;
             SoLuongNhap = sl;
         }
 

@@ -103,6 +103,18 @@
     <Compile Include="UserControls\CustomButton.Designer.cs">
       <DependentUpon>CustomButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_AddGoods.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_AddGoods.Designer.cs">
+      <DependentUpon>UC_AddGoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_AddReceipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_AddReceipt.Designer.cs">
+      <DependentUpon>UC_AddReceipt.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_Issue.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -135,6 +147,18 @@
     <Compile Include="UserControls\UC_Revenue.Designer.cs">
       <DependentUpon>UC_Revenue.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_ReceiptInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_ReceiptInfo.Designer.cs">
+      <DependentUpon>UC_ReceiptInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_ThongKeGoods.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_ThongKeGoods.Designer.cs">
+      <DependentUpon>UC_ThongKeGoods.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\AccountProfiles.resx">
       <DependentUpon>AccountProfiles.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +167,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CustomButton.resx">
       <DependentUpon>CustomButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_AddGoods.resx">
+      <DependentUpon>UC_AddGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_AddReceipt.resx">
+      <DependentUpon>UC_AddReceipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Issue.resx">
       <DependentUpon>UC_Issue.cs</DependentUpon>
@@ -168,6 +198,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Revenue.resx">
       <DependentUpon>UC_Revenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_ReceiptInfo.resx">
+      <DependentUpon>UC_ReceiptInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_ThongKeGoods.resx">
+      <DependentUpon>UC_ThongKeGoods.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

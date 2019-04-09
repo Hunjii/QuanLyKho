@@ -83,5 +83,6 @@ namespace QLKho
             fLogin login = new fLogin();
             login.Show();
         }
+        
     }
 }

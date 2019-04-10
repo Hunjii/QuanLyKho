@@ -44,5 +44,11 @@ namespace QLKho
             UC_ReceiptInfo uc = new UC_ReceiptInfo();
             AddControlsToPanel(uc);
         }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            UC_ThongKeGoods uc = new UC_ThongKeGoods();
+            AddControlsToPanel(uc);
+        }
     }
 }

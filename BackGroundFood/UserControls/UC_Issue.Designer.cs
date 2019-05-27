@@ -29,16 +29,16 @@ namespace QLKho.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Issue));
-            this.palUCMenu1 = new System.Windows.Forms.Panel();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnXoaPX = new System.Windows.Forms.Button();
+            this.btnSuaPX = new System.Windows.Forms.Button();
+            this.btnThemPX = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnXoaCTPX = new System.Windows.Forms.Button();
             this.cbMaHH = new System.Windows.Forms.ComboBox();
+            this.btnSuaCTPX = new System.Windows.Forms.Button();
             this.lblMaHH = new System.Windows.Forms.Label();
-            this.btnThemChiTietPX = new System.Windows.Forms.Button();
+            this.btnThemCTPX = new System.Windows.Forms.Button();
             this.txtSoLuongXuat = new System.Windows.Forms.TextBox();
             this.lblDonGiaXuat = new System.Windows.Forms.Label();
             this.txtDonGiaXuat = new System.Windows.Forms.TextBox();
@@ -49,85 +49,33 @@ namespace QLKho.UserControls
             this.txtSoPX = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvPhieuXuat = new System.Windows.Forms.DataGridView();
-            this.btnThemPX = new System.Windows.Forms.Button();
-            this.btnSuaPX = new System.Windows.Forms.Button();
-            this.btnXoaPX = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.lvCTPhieuXuat = new System.Windows.Forms.ListView();
-            this.clmMaHH = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmTenHH = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmSoLuongXuat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmDonGiaXuat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dgvCTPhieuXuat = new System.Windows.Forms.DataGridView();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.palUCMenu1.SuspendLayout();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dtpNgayXuatTo = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayXuatFrom = new System.Windows.Forms.DateTimePicker();
+            this.txtTimKiemSoPX = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTimKiemNgayXuat = new System.Windows.Forms.Label();
+            this.btnTimKiemPX = new System.Windows.Forms.Button();
+            this.lblTimKiemSoPX = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuXuat)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTPhieuXuat)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // palUCMenu1
-            // 
-            this.palUCMenu1.Controls.Add(this.btnEdit);
-            this.palUCMenu1.Controls.Add(this.btnDelete);
-            this.palUCMenu1.Controls.Add(this.btnAdd);
-            this.palUCMenu1.Location = new System.Drawing.Point(16, 3);
-            this.palUCMenu1.Name = "palUCMenu1";
-            this.palUCMenu1.Size = new System.Drawing.Size(406, 56);
-            this.palUCMenu1.TabIndex = 4;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.SystemColors.Desktop;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(270, 0);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(125, 56);
-            this.btnEdit.TabIndex = 0;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.SystemColors.Desktop;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(137, 0);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(125, 56);
-            this.btnDelete.TabIndex = 0;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.SystemColors.Desktop;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(5, 0);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(125, 56);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "AddNew";
-            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnXoaPX);
+            this.groupBox1.Controls.Add(this.btnSuaPX);
+            this.groupBox1.Controls.Add(this.btnThemPX);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.lblSoPX);
             this.groupBox1.Controls.Add(this.lblTenKH);
@@ -135,18 +83,50 @@ namespace QLKho.UserControls
             this.groupBox1.Controls.Add(this.txtSoPX);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(16, 77);
+            this.groupBox1.Location = new System.Drawing.Point(16, 75);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(395, 380);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin xuất hàng";
             // 
+            // btnXoaPX
+            // 
+            this.btnXoaPX.Location = new System.Drawing.Point(246, 118);
+            this.btnXoaPX.Name = "btnXoaPX";
+            this.btnXoaPX.Size = new System.Drawing.Size(75, 23);
+            this.btnXoaPX.TabIndex = 5;
+            this.btnXoaPX.Text = "Xóa";
+            this.btnXoaPX.UseVisualStyleBackColor = true;
+            this.btnXoaPX.Click += new System.EventHandler(this.btnXoaPX_Click);
+            // 
+            // btnSuaPX
+            // 
+            this.btnSuaPX.Location = new System.Drawing.Point(137, 118);
+            this.btnSuaPX.Name = "btnSuaPX";
+            this.btnSuaPX.Size = new System.Drawing.Size(75, 23);
+            this.btnSuaPX.TabIndex = 5;
+            this.btnSuaPX.Text = "Sửa";
+            this.btnSuaPX.UseVisualStyleBackColor = true;
+            this.btnSuaPX.Click += new System.EventHandler(this.btnSuaPX_Click);
+            // 
+            // btnThemPX
+            // 
+            this.btnThemPX.Location = new System.Drawing.Point(40, 118);
+            this.btnThemPX.Name = "btnThemPX";
+            this.btnThemPX.Size = new System.Drawing.Size(75, 23);
+            this.btnThemPX.TabIndex = 5;
+            this.btnThemPX.Text = "Thêm";
+            this.btnThemPX.UseVisualStyleBackColor = true;
+            this.btnThemPX.Click += new System.EventHandler(this.btnThemPX_Click);
+            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnXoaCTPX);
             this.groupBox3.Controls.Add(this.cbMaHH);
+            this.groupBox3.Controls.Add(this.btnSuaCTPX);
             this.groupBox3.Controls.Add(this.lblMaHH);
-            this.groupBox3.Controls.Add(this.btnThemChiTietPX);
+            this.groupBox3.Controls.Add(this.btnThemCTPX);
             this.groupBox3.Controls.Add(this.txtSoLuongXuat);
             this.groupBox3.Controls.Add(this.lblDonGiaXuat);
             this.groupBox3.Controls.Add(this.txtDonGiaXuat);
@@ -158,6 +138,16 @@ namespace QLKho.UserControls
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chi tiết phiếu xuất";
             // 
+            // btnXoaCTPX
+            // 
+            this.btnXoaCTPX.Location = new System.Drawing.Point(241, 168);
+            this.btnXoaCTPX.Name = "btnXoaCTPX";
+            this.btnXoaCTPX.Size = new System.Drawing.Size(75, 23);
+            this.btnXoaCTPX.TabIndex = 5;
+            this.btnXoaCTPX.Text = "Xóa";
+            this.btnXoaCTPX.UseVisualStyleBackColor = true;
+            this.btnXoaCTPX.Click += new System.EventHandler(this.btnXoaCTPX_Click);
+            // 
             // cbMaHH
             // 
             this.cbMaHH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -166,6 +156,16 @@ namespace QLKho.UserControls
             this.cbMaHH.Name = "cbMaHH";
             this.cbMaHH.Size = new System.Drawing.Size(159, 24);
             this.cbMaHH.TabIndex = 3;
+            // 
+            // btnSuaCTPX
+            // 
+            this.btnSuaCTPX.Location = new System.Drawing.Point(132, 168);
+            this.btnSuaCTPX.Name = "btnSuaCTPX";
+            this.btnSuaCTPX.Size = new System.Drawing.Size(75, 23);
+            this.btnSuaCTPX.TabIndex = 5;
+            this.btnSuaCTPX.Text = "Sửa";
+            this.btnSuaCTPX.UseVisualStyleBackColor = true;
+            this.btnSuaCTPX.Click += new System.EventHandler(this.btnSuaCTPX_Click);
             // 
             // lblMaHH
             // 
@@ -178,16 +178,15 @@ namespace QLKho.UserControls
             this.lblMaHH.TabIndex = 0;
             this.lblMaHH.Text = "Mã Hàng Hóa:";
             // 
-            // btnThemChiTietPX
+            // btnThemCTPX
             // 
-            this.btnThemChiTietPX.ForeColor = System.Drawing.Color.Black;
-            this.btnThemChiTietPX.Location = new System.Drawing.Point(110, 174);
-            this.btnThemChiTietPX.Name = "btnThemChiTietPX";
-            this.btnThemChiTietPX.Size = new System.Drawing.Size(147, 23);
-            this.btnThemChiTietPX.TabIndex = 7;
-            this.btnThemChiTietPX.Text = "Thêm vào phiếu xuất";
-            this.btnThemChiTietPX.UseVisualStyleBackColor = true;
-            this.btnThemChiTietPX.Click += new System.EventHandler(this.btnThemChiTietPX_Click);
+            this.btnThemCTPX.Location = new System.Drawing.Point(35, 168);
+            this.btnThemCTPX.Name = "btnThemCTPX";
+            this.btnThemCTPX.Size = new System.Drawing.Size(75, 23);
+            this.btnThemCTPX.TabIndex = 5;
+            this.btnThemCTPX.Text = "Thêm";
+            this.btnThemCTPX.UseVisualStyleBackColor = true;
+            this.btnThemCTPX.Click += new System.EventHandler(this.btnThemCTPX_Click);
             // 
             // txtSoLuongXuat
             // 
@@ -265,119 +264,159 @@ namespace QLKho.UserControls
             // 
             this.groupBox2.Controls.Add(this.dgvPhieuXuat);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(465, 77);
+            this.groupBox2.Location = new System.Drawing.Point(465, 75);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(357, 386);
+            this.groupBox2.Size = new System.Drawing.Size(376, 509);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách phiếu xuất";
             // 
             // dgvPhieuXuat
             // 
+            this.dgvPhieuXuat.AllowUserToAddRows = false;
+            this.dgvPhieuXuat.AllowUserToResizeRows = false;
+            this.dgvPhieuXuat.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvPhieuXuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhieuXuat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPhieuXuat.Location = new System.Drawing.Point(3, 16);
+            this.dgvPhieuXuat.MultiSelect = false;
             this.dgvPhieuXuat.Name = "dgvPhieuXuat";
-            this.dgvPhieuXuat.Size = new System.Drawing.Size(351, 367);
+            this.dgvPhieuXuat.ReadOnly = true;
+            this.dgvPhieuXuat.RowHeadersVisible = false;
+            this.dgvPhieuXuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPhieuXuat.Size = new System.Drawing.Size(370, 490);
             this.dgvPhieuXuat.TabIndex = 0;
-            this.dgvPhieuXuat.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPhieuXuat_RowHeaderMouseClick);
-            // 
-            // btnThemPX
-            // 
-            this.btnThemPX.Location = new System.Drawing.Point(32, 490);
-            this.btnThemPX.Name = "btnThemPX";
-            this.btnThemPX.Size = new System.Drawing.Size(99, 23);
-            this.btnThemPX.TabIndex = 7;
-            this.btnThemPX.Text = "Thêm";
-            this.btnThemPX.UseVisualStyleBackColor = true;
-            this.btnThemPX.Click += new System.EventHandler(this.btnThemPX_Click);
-            // 
-            // btnSuaPX
-            // 
-            this.btnSuaPX.Location = new System.Drawing.Point(153, 490);
-            this.btnSuaPX.Name = "btnSuaPX";
-            this.btnSuaPX.Size = new System.Drawing.Size(99, 23);
-            this.btnSuaPX.TabIndex = 7;
-            this.btnSuaPX.Text = "Cập nhật";
-            this.btnSuaPX.UseVisualStyleBackColor = true;
-            this.btnSuaPX.Click += new System.EventHandler(this.btnSuaPX_Click);
-            // 
-            // btnXoaPX
-            // 
-            this.btnXoaPX.Location = new System.Drawing.Point(286, 490);
-            this.btnXoaPX.Name = "btnXoaPX";
-            this.btnXoaPX.Size = new System.Drawing.Size(99, 23);
-            this.btnXoaPX.TabIndex = 7;
-            this.btnXoaPX.Text = "Xóa";
-            this.btnXoaPX.UseVisualStyleBackColor = true;
-            this.btnXoaPX.Click += new System.EventHandler(this.btnXoaPX_Click);
+            this.dgvPhieuXuat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuXuat_CellClick);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.lvCTPhieuXuat);
-            this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(828, 77);
+            this.groupBox4.Controls.Add(this.dgvCTPhieuXuat);
+            this.groupBox4.ForeColor = System.Drawing.Color.Black;
+            this.groupBox4.Location = new System.Drawing.Point(844, 75);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(355, 383);
+            this.groupBox4.Size = new System.Drawing.Size(339, 509);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Chi tiết phiếu xuất";
             // 
-            // lvCTPhieuXuat
+            // dgvCTPhieuXuat
             // 
-            this.lvCTPhieuXuat.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.clmMaHH,
-            this.clmTenHH,
-            this.clmSoLuongXuat,
-            this.clmDonGiaXuat});
-            this.lvCTPhieuXuat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvCTPhieuXuat.FullRowSelect = true;
-            this.lvCTPhieuXuat.GridLines = true;
-            this.lvCTPhieuXuat.Location = new System.Drawing.Point(3, 16);
-            this.lvCTPhieuXuat.MultiSelect = false;
-            this.lvCTPhieuXuat.Name = "lvCTPhieuXuat";
-            this.lvCTPhieuXuat.Size = new System.Drawing.Size(349, 364);
-            this.lvCTPhieuXuat.TabIndex = 0;
-            this.lvCTPhieuXuat.UseCompatibleStateImageBehavior = false;
-            this.lvCTPhieuXuat.View = System.Windows.Forms.View.Details;
-            this.lvCTPhieuXuat.SelectedIndexChanged += new System.EventHandler(this.lvCTPhieuXuat_SelectedIndexChanged);
+            this.dgvCTPhieuXuat.AllowUserToAddRows = false;
+            this.dgvCTPhieuXuat.AllowUserToDeleteRows = false;
+            this.dgvCTPhieuXuat.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvCTPhieuXuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCTPhieuXuat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCTPhieuXuat.Location = new System.Drawing.Point(3, 16);
+            this.dgvCTPhieuXuat.MultiSelect = false;
+            this.dgvCTPhieuXuat.Name = "dgvCTPhieuXuat";
+            this.dgvCTPhieuXuat.ReadOnly = true;
+            this.dgvCTPhieuXuat.RowHeadersVisible = false;
+            this.dgvCTPhieuXuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCTPhieuXuat.Size = new System.Drawing.Size(333, 490);
+            this.dgvCTPhieuXuat.TabIndex = 0;
+            this.dgvCTPhieuXuat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTPhieuXuat_CellClick);
             // 
-            // clmMaHH
+            // groupBox5
             // 
-            this.clmMaHH.Text = "Mã hàng hóa";
-            this.clmMaHH.Width = 75;
+            this.groupBox5.Controls.Add(this.dtpNgayXuatTo);
+            this.groupBox5.Controls.Add(this.dtpNgayXuatFrom);
+            this.groupBox5.Controls.Add(this.txtTimKiemSoPX);
+            this.groupBox5.Controls.Add(this.label1);
+            this.groupBox5.Controls.Add(this.lblTimKiemNgayXuat);
+            this.groupBox5.Controls.Add(this.btnTimKiemPX);
+            this.groupBox5.Controls.Add(this.lblTimKiemSoPX);
+            this.groupBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox5.Location = new System.Drawing.Point(16, 461);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(395, 123);
+            this.groupBox5.TabIndex = 9;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Tìm kiếm";
             // 
-            // clmTenHH
+            // dtpNgayXuatTo
             // 
-            this.clmTenHH.Text = "Tên hàng hóa";
-            this.clmTenHH.Width = 110;
+            this.dtpNgayXuatTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayXuatTo.Location = new System.Drawing.Point(100, 78);
+            this.dtpNgayXuatTo.Name = "dtpNgayXuatTo";
+            this.dtpNgayXuatTo.Size = new System.Drawing.Size(175, 20);
+            this.dtpNgayXuatTo.TabIndex = 12;
             // 
-            // clmSoLuongXuat
+            // dtpNgayXuatFrom
             // 
-            this.clmSoLuongXuat.Text = "Số lượng xuất";
-            this.clmSoLuongXuat.Width = 72;
+            this.dtpNgayXuatFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayXuatFrom.Location = new System.Drawing.Point(100, 50);
+            this.dtpNgayXuatFrom.Name = "dtpNgayXuatFrom";
+            this.dtpNgayXuatFrom.Size = new System.Drawing.Size(175, 20);
+            this.dtpNgayXuatFrom.TabIndex = 11;
             // 
-            // clmDonGiaXuat
+            // txtTimKiemSoPX
             // 
-            this.clmDonGiaXuat.Text = "Đơn giá xuất";
-            this.clmDonGiaXuat.Width = 88;
+            this.txtTimKiemSoPX.Location = new System.Drawing.Point(100, 22);
+            this.txtTimKiemSoPX.Name = "txtTimKiemSoPX";
+            this.txtTimKiemSoPX.Size = new System.Drawing.Size(175, 20);
+            this.txtTimKiemSoPX.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(62, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "đến:";
+            // 
+            // lblTimKiemNgayXuat
+            // 
+            this.lblTimKiemNgayXuat.AutoSize = true;
+            this.lblTimKiemNgayXuat.Location = new System.Drawing.Point(17, 52);
+            this.lblTimKiemNgayXuat.Name = "lblTimKiemNgayXuat";
+            this.lblTimKiemNgayXuat.Size = new System.Drawing.Size(70, 13);
+            this.lblTimKiemNgayXuat.TabIndex = 1;
+            this.lblTimKiemNgayXuat.Text = "Ngày xuất từ:";
+            // 
+            // btnTimKiemPX
+            // 
+            this.btnTimKiemPX.Location = new System.Drawing.Point(299, 50);
+            this.btnTimKiemPX.Name = "btnTimKiemPX";
+            this.btnTimKiemPX.Size = new System.Drawing.Size(75, 23);
+            this.btnTimKiemPX.TabIndex = 0;
+            this.btnTimKiemPX.Text = "Tìm kiếm";
+            this.btnTimKiemPX.UseVisualStyleBackColor = true;
+            this.btnTimKiemPX.Click += new System.EventHandler(this.btnTimKiemPX_Click);
+            // 
+            // lblTimKiemSoPX
+            // 
+            this.lblTimKiemSoPX.AutoSize = true;
+            this.lblTimKiemSoPX.Location = new System.Drawing.Point(17, 22);
+            this.lblTimKiemSoPX.Name = "lblTimKiemSoPX";
+            this.lblTimKiemSoPX.Size = new System.Drawing.Size(75, 13);
+            this.lblTimKiemSoPX.TabIndex = 1;
+            this.lblTimKiemSoPX.Text = "Số phiếu xuất:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(368, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(464, 46);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "QUẢN LÝ PHIẾU XUẤT";
             // 
             // UC_Issue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.btnXoaPX);
-            this.Controls.Add(this.btnSuaPX);
-            this.Controls.Add(this.btnThemPX);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.palUCMenu1);
             this.Name = "UC_Issue";
-            this.Size = new System.Drawing.Size(1200, 600);
+            this.Size = new System.Drawing.Size(1200, 643);
             this.Load += new System.EventHandler(this.UC_Issue_Load);
-            this.palUCMenu1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -385,16 +424,15 @@ namespace QLKho.UserControls
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuXuat)).EndInit();
             this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTPhieuXuat)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel palUCMenu1;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbMaHH;
         private System.Windows.Forms.Label lblSoPX;
@@ -407,19 +445,26 @@ namespace QLKho.UserControls
         private System.Windows.Forms.TextBox txtDonGiaXuat;
         private System.Windows.Forms.TextBox txtSoLuongXuat;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnThemPX;
-        private System.Windows.Forms.Button btnSuaPX;
-        private System.Windows.Forms.Button btnXoaPX;
         private System.Windows.Forms.DataGridView dgvPhieuXuat;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnThemChiTietPX;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ListView lvCTPhieuXuat;
-        private System.Windows.Forms.ColumnHeader clmMaHH;
-        private System.Windows.Forms.ColumnHeader clmTenHH;
-        private System.Windows.Forms.ColumnHeader clmSoLuongXuat;
-        private System.Windows.Forms.ColumnHeader clmDonGiaXuat;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox txtTimKiemSoPX;
+        private System.Windows.Forms.Label lblTimKiemSoPX;
+        private System.Windows.Forms.Button btnTimKiemPX;
+        private System.Windows.Forms.DateTimePicker dtpNgayXuatTo;
+        private System.Windows.Forms.DateTimePicker dtpNgayXuatFrom;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTimKiemNgayXuat;
+        private System.Windows.Forms.DataGridView dgvCTPhieuXuat;
+        private System.Windows.Forms.Button btnXoaPX;
+        private System.Windows.Forms.Button btnSuaPX;
+        private System.Windows.Forms.Button btnThemPX;
+        private System.Windows.Forms.Button btnXoaCTPX;
+        private System.Windows.Forms.Button btnSuaCTPX;
+        private System.Windows.Forms.Button btnThemCTPX;
+        private System.Windows.Forms.Label label2;
     }
 }

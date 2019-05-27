@@ -54,29 +54,23 @@ namespace QLKho.Controller
             }
             return null;
         }
-        public static bool ThemPhieuXuat(PhieuXuat px,List<CT_PhieuXuat> lstCT_PhieuXuat)
+        public static bool ThemPhieuXuat(PhieuXuat px)
         {
             try
             {
                 //thêm 1 phiếu xuất
-                string query2 = "";
-
-                foreach (var item in lstCT_PhieuXuat)
-                {
-                    query2 = query2 + "(@maPX," + "N'" + item.MaHH + "'," + item.SLXuat + "," + item.DonGiaXuat + "),";
-                }
-                string query = "INSERT INTO PHIEUXUAT( SOPX, NGAYXUAT, TENKH ) VALUES  ( @maPX,GETDATE(),@tenKH)" +
-                   " INSERT INTO CTPHIEUXUAT(SOPX, MAHH, SLXUAT, DONGIAXUAT)VALUES" + query2.Substring(0, query2.Length - 1);
+                string query = "INSERT INTO PHIEUXUAT VALUES (@maPX,GETDATE(),@tenKH)";
                 using (SqlConnection connection = new SqlConnection(SqlConnect.connectionString))
                 {
                     connection.Open();
-                    SqlCommand sqlCommand = new SqlCommand();
-                    sqlCommand.CommandType = CommandType.Text;
-                    sqlCommand.CommandText = query;
-                    sqlCommand.Connection = connection;
-                    sqlCommand.Parameters.Add("@maPX", SqlDbType.NVarChar).Value = px.SoPX;
-                    sqlCommand.Parameters.Add("@tenKH", SqlDbType.NVarChar).Value = px.TenKH;
-                    int data = sqlCommand.ExecuteNonQuery();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Connection = connection;
+                    cmd.Parameters.Add("@maPX", SqlDbType.NVarChar).Value = px.SoPX;
+                    cmd.Parameters.Add("@tenKH", SqlDbType.NVarChar).Value = px.TenKH;
+                    int data = cmd.ExecuteNonQuery();
+                    connection.Close();
                     if (data > 0) return true;
                     else return false;
                 }
@@ -86,17 +80,16 @@ namespace QLKho.Controller
                 return false;
             }
         }
-        public static DataTable LayChiTietPhieuXuat(string mapx)
+        public static DataTable LayChiTietPhieuXuat(string sopx)
         {
-            string query = "SELECT ct.MAHH,hh.TENHH, ct.SLXUAT,ct.DONGIAXUAT  FROM dbo.CTPHIEUXUAT ct INNER JOIN dbo.HANGHOA hh ON ct.MAHH=hh.MAHH WHERE ct.SOPX = " + "'"+mapx+"'";
+            string query = "SELECT * FROM dbo.CTPHIEUXUAT WHERE SOPX='" +sopx+"'";
             DataTable data = new DataTable();
             data = SqlConnect.Instance.ExecuteQuery(query);
             return data;
         }
-        public static bool CapNhatPhieuXuat(PhieuXuat px, CT_PhieuXuat ctpx)
+        public static bool CapNhatPhieuXuat(PhieuXuat px)
         {
-            string query = "UPDATE PHIEUXUAT SET TENKH=@tenKH WHERE SOPX=@soPX"+
-                " UPDATE dbo.CTPHIEUXUAT SET SLXUAT=@slXuat, DONGIAXUAT=@donGiaXuat WHERE MAHH=@maHH";
+            string query = "UPDATE PHIEUXUAT SET TENKH=@tenKH WHERE SOPX=@soPX";
             using (SqlConnection connection = new SqlConnection(SqlConnect.connectionString))
             {
                 connection.Open();
@@ -106,18 +99,15 @@ namespace QLKho.Controller
                 sqlCommand.Connection = connection;
                 sqlCommand.Parameters.Add("@soPX", SqlDbType.NVarChar).Value = px.SoPX;
                 sqlCommand.Parameters.Add("@tenKH", SqlDbType.NVarChar).Value = px.TenKH;
-                sqlCommand.Parameters.Add("@slXuat", SqlDbType.Int).Value = ctpx.SLXuat;
-                sqlCommand.Parameters.Add("@donGiaXuat", SqlDbType.Money).Value = ctpx.DonGiaXuat;
-                sqlCommand.Parameters.Add("@maHH", SqlDbType.NVarChar).Value = ctpx.MaHH;
                 int data = sqlCommand.ExecuteNonQuery();
+                connection.Close();
                 if (data > 0) return true;
                 else return false;
             }
         }
         public static bool XoaPhieuXuat( string sopx)
         {
-                string query = "DELETE FROM dbo.CTPHIEUXUAT WHERE SOPX=@soPX" +
-                               " DELETE FROM dbo.PHIEUXUAT WHERE SOPX = @soPX";
+            string query = "DELETE FROM dbo.PHIEUXUAT WHERE SOPX = @soPX";
                 using (SqlConnection connection = new SqlConnection(SqlConnect.connectionString))
                 {
                     connection.Open();
@@ -127,9 +117,22 @@ namespace QLKho.Controller
                     sqlCommand.Connection = connection;
                     sqlCommand.Parameters.Add("@soPX", SqlDbType.NVarChar).Value = sopx;
                     int data = sqlCommand.ExecuteNonQuery();
+                    connection.Close();
                     if (data > 0) return true;
                     else return false;
                 }
+        }
+        public static DataTable TimKiemPX(string sopx, DateTime ngayxuatfrom, DateTime ngatxuatto)
+        {
+            string sqlTimKiem = @"SELECT * FROM PHIEUXUAT WHERE ";
+            if ((sopx == "") && (ngayxuatfrom.ToString() != "")) sqlTimKiem += "NGAYXUAT BETWEEN CAST('" + ngayxuatfrom.ToString("yyyy-MM-dd") + "' AS DATE) " +
+                    "AND CAST('" + ngatxuatto.ToString("yyyy-MM-dd") + "' AS DATE)";
+            else sqlTimKiem += "SOPX like '%" + sopx + "%' AND NGAYXUAT BETWEEN CAST('" + ngayxuatfrom.ToString("yyyy-MM-dd") + "' AS DATE) " +
+                   "AND CAST('" + ngatxuatto.ToString("yyyy-MM-dd") + "' AS DATE)"; 
+            
+            DataTable dt = new DataTable();
+            dt = SqlConnect.Instance.ExecuteQuery(sqlTimKiem);
+            return dt;
         }
         public static DataTable LayThongTinHangHoa(string maHH)
         {
@@ -137,6 +140,73 @@ namespace QLKho.Controller
             DataTable data = new DataTable();
             data = SqlConnect.Instance.ExecuteQuery(query);
             return data;
+        }
+        public static bool ThemCTPhieuXuat(string sopx, CT_PhieuXuat ctpx)
+        {
+            try
+            {
+                //thêm 1 phiếu xuất
+                string query = "INSERT INTO CTPHIEUXUAT VALUES(@soPX, @maHH, @soLuongXuat,@donGiaXuat)";
+                using (SqlConnection connection = new SqlConnection(SqlConnect.connectionString))
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Connection = connection;
+                    cmd.Parameters.Add("@soPX", SqlDbType.NVarChar).Value = sopx;
+                    cmd.Parameters.Add("@maHH", SqlDbType.NVarChar).Value = ctpx.MaHH;
+                    cmd.Parameters.Add("@soLuongXuat", SqlDbType.Int).Value = ctpx.SLXuat;
+                    cmd.Parameters.Add("@donGiaXuat", SqlDbType.Money).Value = ctpx.DonGiaXuat;
+                    int data = cmd.ExecuteNonQuery();
+                    connection.Close();
+                    if (data > 0) return true;
+                    else return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public static bool SuaCTPhieuXuat(string sopx, CT_PhieuXuat ctpx)
+        {
+            string query = "UPDATE CTPHIEUXUAT SET MAHH=@maHH, SLXUAT=@slXuat, DONGIAXUAT=@donGiaXuat WHERE SOPX=@soPX AND MAHH=@maHH";
+            using (SqlConnection connection = new SqlConnection(SqlConnect.connectionString))
+            {
+                connection.Open();
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.CommandText = query;
+                sqlCommand.Connection = connection;
+                sqlCommand.Parameters.Add("@soPX", SqlDbType.NVarChar).Value = sopx;
+                sqlCommand.Parameters.Add("@maHH", SqlDbType.NVarChar).Value = ctpx.MaHH;
+                sqlCommand.Parameters.Add("@slXuat", SqlDbType.Int).Value = ctpx.SLXuat;
+                sqlCommand.Parameters.Add("@donGiaXuat", SqlDbType.Money).Value = ctpx.DonGiaXuat;
+
+                int data = sqlCommand.ExecuteNonQuery();
+                connection.Close();
+                if (data > 0) return true;
+                else return false;
+            }
+        }
+        public static bool XoaCTPhieuXuat(string sopx, string maHH)
+        {
+            string query = "DELETE FROM CTPHIEUXUAT WHERE SOPX = @soPX and MAHH=@maHH";
+            using (SqlConnection connection = new SqlConnection(SqlConnect.connectionString))
+            {
+                connection.Open();
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.CommandText = query;
+                sqlCommand.Connection = connection;
+                sqlCommand.Parameters.Add("@soPX", SqlDbType.NVarChar).Value = sopx;
+                sqlCommand.Parameters.Add("@maHH", SqlDbType.NVarChar).Value = maHH;
+                int data = sqlCommand.ExecuteNonQuery();
+                connection.Close();
+                if (data > 0) return true;
+                else return false;
+            }
         }
     }
 }
